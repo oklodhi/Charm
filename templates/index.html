@@ -25,15 +25,19 @@
     </div>
 
     <table border="1" cellpadding="5" cellspacing="5">
-        {% for item in data %}
         <tr>
-            <td>{{data.id}}</td>
-            <td>{{data.artist}}</td>
-            <td>{{data.song}}</td>
-        </tr>
+            {%for row in data%}
+            <tr>
+                {%for col in row%}
+                    <td>{{data.id}}</td>
+                    <td>{{data.artist}}</td>
+                    <td>{{data.song}}</td>
+                {% endfor %}
+            </tr>
         {% endfor %}
-
+        </tr>
     </table>
+
     <div class="jumbotron">
         <h1>Bucket List App</h1>
         <p class="lead"></p>
